@@ -109,9 +109,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HarmonyPatches.cs" />
-    <Compile Include="Setting.cs" />
-    <Compile Include="ShowRichResources.cs" />
+    <Compile Include="ShowRichResouces\HarmonyPatches.cs" />
+    <Compile Include="ShowRichResouces\Setting.cs" />
+    <Compile Include="ShowRichResouces\ShowRichResources.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LICENSE" />
+    <None Include="README.md" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
