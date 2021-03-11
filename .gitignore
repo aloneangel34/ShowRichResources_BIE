@@ -5,9 +5,6 @@
 
 
 
-# Costom Specific files
-*.sln
-*.csproj
 
 # User-specific files
 *.rsuser
