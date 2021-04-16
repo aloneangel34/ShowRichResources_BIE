@@ -139,7 +139,7 @@ namespace ShowRichResources
                             tg.Text = Setting.enabled.Value ? "显示丰富资源 已开启" : "显示丰富资源 已关闭";
 
                             //开关MOD时直接将会应用/卸载 Patch（该方式需要YanCore作为支持）
-                            if(value) HarmonyPatches.PatchHandlers["显示丰富资源"].Patch(HarmonyPatches.harmony);
+                            if(Setting.enabled.Value) HarmonyPatches.PatchHandlers["显示丰富资源"].Patch(HarmonyPatches.harmony);
                             else HarmonyPatches.PatchHandlers["显示丰富资源"].Unpatch(HarmonyPatches.harmony);
 
                             //刷新地块图标（带是否在游戏中的判定）（注：RefreshResourcesIcon有做修改）
@@ -153,8 +153,8 @@ namespace ShowRichResources
                                 //所有 组件的Name属性不为"MOD总开关"的组件，其显示/隐藏状态按照value设置
                                 if (managedGameObject.Name != "MOD总开关")
                                 {
-                                    //切换组件的显示/隐藏“SetActive(value)”这里的value来自【onValueChanged = (bool value, Toggle tg)】中的value参数（这个局部参数的名字可以自己改）
-                                    managedGameObject.SetActive(value);
+                                    //切换组件的显示/隐藏“SetActive(value)”
+                                    managedGameObject.SetActive(Setting.enabled.Value);
                                 }
                             }
                         },
@@ -296,7 +296,7 @@ namespace ShowRichResources
                                     new TaiwuLabel()
                                     {
                                         //既可以使用颜色代码，也可以使用转义符，但并不是所有<>代码都支持
-                                        Text = "<color=#DDCCAA>阈值修改范围（1～999）</color>　<color=#998877>游戏原生阈值全部为：100\n【村民采集建议阈值】物料：150　银钱：70 　门派城镇采集修正：开\n【挖掘素材建议阈值】物料：150　银钱：100　门派城镇采集修正：关\n注意：只是更改了图标的显示阈值，实际地块资源量未变动</color>",
+                                        Text = "<color=#DDCCAA>资源量达到阈值的地块显示资源丰富图标</color>　<color=#998877>修改范围（1～999）游戏原生阈值：100\n【村民采集建议阈值】物料：150　银钱：60 　门派城镇采集修正：开\n【挖掘素材建议阈值】物料：150　银钱：100　门派城镇采集修正：关</color>",
                                         Element = { PreferredSize = { 0, 110 } },
                                         UseOutline = true,
                                     },

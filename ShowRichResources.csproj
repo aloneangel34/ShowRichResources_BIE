@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{4D605636-8FD8-44C0-B7C0-3ECB92068C7C}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>ShowRichResouces</RootNamespace>
-    <AssemblyName>ShowRichResouces</AssemblyName>
+    <RootNamespace>ShowRichResources</RootNamespace>
+    <AssemblyName>ShowRichResources</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -67,9 +67,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ShowRichResouces\HarmonyPatches.cs" />
-    <Compile Include="ShowRichResouces\Settings.cs" />
-    <Compile Include="ShowRichResouces\ShowRichResources.cs" />
+    <Compile Include="ShowRichResources\HarmonyPatches.cs" />
+    <Compile Include="ShowRichResources\Settings.cs" />
+    <Compile Include="ShowRichResources\Main.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="LICENSE" />
@@ -79,11 +79,11 @@
   <PropertyGroup>
     <PostBuildEvent>echo copy dll file to steam game
 setlocal
-if not exist "D:\SteamLibrary\steamapps\common\The Scroll Of Taiwu\BepInEx\plugins\ShowRichResouces\" echo not copy file &amp; goto END
+if not exist "D:\SteamLibrary\steamapps\common\The Scroll Of Taiwu\BepInEx\plugins\ShowRichResources\" echo not copy file &amp; goto END
 if %25errorlevel%25 neq 0 goto :cmEnd
-copy "$(TargetPATH)" "D:\SteamLibrary\steamapps\common\The Scroll Of Taiwu\BepInEx\plugins\ShowRichResouces"
+copy "$(TargetPATH)" "D:\SteamLibrary\steamapps\common\The Scroll Of Taiwu\BepInEx\plugins\ShowRichResources"
 if %25errorlevel%25 neq 0 goto :cmEnd
-echo "copy dll file ShowRichResouces.dll ok"
+echo "copy dll file ShowRichResources.dll ok"
 if %25errorlevel%25 neq 0 goto :cmEnd
 :END
 if %25errorlevel%25 neq 0 goto :cmEnd
