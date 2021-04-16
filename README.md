@@ -5,13 +5,13 @@
 ****
 ## Original MOD / 原MOD
 * This mod comes from its original one (which is for UMM):
-* 本MOD源自 显示丰富资源 的 UnityModManager（UMM）版本：
+* 本MOD迁移自 显示丰富资源 的 UnityModManager（UMM）版本：
 https://github.com/phorcys/Taiwu_mods/tree/master/ShowRichResources
 
 
 ****
 ## MOD version / MOD 版本
-ShowRichResources/显示丰富资源 v1.2.1
+ShowRichResources/显示丰富资源 v1.2.2
 
 ****
 ## 发布页（NGA 论坛）

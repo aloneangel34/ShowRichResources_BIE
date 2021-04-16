@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31025.194
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShowRichResouces_BIE", "ShowRichResouces_BIE.csproj", "{4D605636-8FD8-44C0-B7C0-3ECB92068C7C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShowRichResouces", "ShowRichResouces.csproj", "{4D605636-8FD8-44C0-B7C0-3ECB92068C7C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

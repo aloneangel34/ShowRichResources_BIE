@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4D605636-8FD8-44C0-B7C0-3ECB92068C7C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ShowRichResouces</RootNamespace>
+    <AssemblyName>ShowRichResouces</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp0284">
+      <HintPath>..\LibDlls\Assembly-CSharp0284.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="BepInEx">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TaiwuUIKit">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityUIKit">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="YanLib">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ShowRichResouces\HarmonyPatches.cs" />
+    <Compile Include="ShowRichResouces\Settings.cs" />
+    <Compile Include="ShowRichResouces\ShowRichResources.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LICENSE" />
+    <None Include="README.md" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>echo copy dll file to steam game
+setlocal
+if not exist "D:\SteamLibrary\steamapps\common\The Scroll Of Taiwu\BepInEx\plugins\ShowRichResouces\" echo not copy file &amp; goto END
+if %25errorlevel%25 neq 0 goto :cmEnd
+copy "$(TargetPATH)" "D:\SteamLibrary\steamapps\common\The Scroll Of Taiwu\BepInEx\plugins\ShowRichResouces"
+if %25errorlevel%25 neq 0 goto :cmEnd
+echo "copy dll file ShowRichResouces.dll ok"
+if %25errorlevel%25 neq 0 goto :cmEnd
+:END
+if %25errorlevel%25 neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %25errorlevel%25 &amp; goto :cmDone
+:cmErrorLevel
+exit /b %251
+:cmDone
+if %25errorlevel%25 neq 0 goto :VCEnd</PostBuildEvent>
+  </PropertyGroup>
+</Project>
