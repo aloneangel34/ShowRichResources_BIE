@@ -38,7 +38,7 @@ namespace ShowRichResources
     public class Main : BaseUnityPlugin
     {
         /// <summary>插件版本</summary>
-        public const string Version = "1.2.2";
+        public const string Version = "1.2.1.1";
         /// <summary>插件名字</summary>
         public const string ModDisplayName = "ShowRichResources/显示丰富资源";
         /// <summary>插件ID</summary>

@@ -12,7 +12,7 @@ https://github.com/phorcys/Taiwu_mods/tree/master/ShowRichResources
 ****
 ## MOD version / MOD 版本
 
-ShowRichResources / 显示丰富资源 v1.2.2
+ShowRichResources / 显示丰富资源 v1.2.1.1
 
 ****
 ## 功能
